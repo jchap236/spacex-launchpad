@@ -31,6 +31,8 @@ namespace SpaceX.LaunchPads.SpaceXDataService
 
             var response = await this.client.GetAsync(requestUri);
 
+            if(response.StatusCode != HttpStatusCode.OK) log.LogWarning($"Unexpected Response from SpaceX API:{response.StatusCode} at {DateTime.UtcNow.ToString()}");
+
             if (response.StatusCode == HttpStatusCode.NotFound) return new List<LaunchPad>();
 
             response.EnsureSuccessStatusCode();

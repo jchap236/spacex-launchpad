@@ -42,7 +42,7 @@ namespace Middleware
             var code = HttpStatusCode.InternalServerError; // 500 if unexpected
             var message = "An unexpected error occurred.";
 
-          
+
             var result = JsonConvert.SerializeObject(new { message = message });
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)code;
@@ -53,3 +53,4 @@ namespace Middleware
         }
     }
 }
+

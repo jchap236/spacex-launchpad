@@ -53,11 +53,13 @@ namespace SpaceX.LaunchPads.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //order is important.
+            app.UseRequestResponseLoggingMiddleware();
             app.UseExceptionHandlerMiddlware();
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
             }
             else
             {
