@@ -33,7 +33,7 @@ namespace SpaceX.LaunchPads.IntegrationTests
             foreach (var pad in launchpads)
             {
                 Assert.NotNull(pad["id"]);
-                Assert.Equal(1, pad.Count());
+                Assert.Single(pad);
             }
         }
 
@@ -51,7 +51,7 @@ namespace SpaceX.LaunchPads.IntegrationTests
             foreach (var pad in launchpads)
             {
                 Assert.NotNull(pad["name"]);
-                Assert.Equal(1, pad.Count());
+                Assert.Single(pad);
             }
         }
 
@@ -69,7 +69,7 @@ namespace SpaceX.LaunchPads.IntegrationTests
             foreach (var pad in launchpads)
             {
                 Assert.NotNull(pad["status"]);
-                Assert.Equal(1, pad.Count());
+                Assert.Single(pad);
             }
         }
 
@@ -84,7 +84,7 @@ namespace SpaceX.LaunchPads.IntegrationTests
 
             var launchpads = JsonConvert.DeserializeObject<JArray>(body);
 
-            Assert.Equal(2, launchpads.Count);
+            Assert.Equal(2, (int)launchpads.Count());
         }
     }
 }

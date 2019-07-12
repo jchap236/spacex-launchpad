@@ -26,7 +26,7 @@ namespace SpaceX.LaunchPads.UnitTests
 
             var filteredObject = launchPadFilter.FilterProperties(launchPad);
             var properties = filteredObject as IDictionary<string, Object>;
-            Assert.Equal(2, properties.Count());
+            Assert.Equal(2, (int)properties.Count());
 
         }
 
@@ -40,7 +40,7 @@ namespace SpaceX.LaunchPads.UnitTests
 
             var filteredObject = launchPadFilter.FilterProperties(launchPad);
             var properties = filteredObject as IDictionary<string, Object>;
-            Assert.Equal(2, properties.Count());
+            Assert.Equal(2, (int)properties.Count());
         }
     }
 }
