@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  spacex-launchpad-api:
+    container_name: spacex-launchpad-api
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+       - "5000:80"
