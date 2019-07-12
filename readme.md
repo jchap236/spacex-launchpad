@@ -30,6 +30,8 @@ Solution to SDC Space X .Net Core Code Challenge
 ## Filters
 Filter the result set or limit the result set using query parameters
 
-Example:
+Examples:
 http://localhost:5000/api/launchpads?filter=status,name&limit=3
+http://localhost:5000/api/launchpads?limit=1
+http://localhost:5000/api/launchpads?filter=id,name
 

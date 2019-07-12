@@ -42,7 +42,8 @@ namespace SpaceX.LaunchPads.Api
                         .Accept
                         .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                });
+                })
+            .AddPolicyHandler(HttpPolicy.NewRetryPolicy());
 
             services.AddAutoMapper(typeof(LaunchPadProfile).Assembly);
 

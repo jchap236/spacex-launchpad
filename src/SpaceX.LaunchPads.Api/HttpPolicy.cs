@@ -5,7 +5,7 @@ using Polly.Extensions.Http;
 
 namespace SpaceX.LaunchPads.Api
 {
-    public static class RetryPolicy
+    public static class HttpPolicy
     {
         public static IAsyncPolicy<HttpResponseMessage> NewRetryPolicy()
         {
